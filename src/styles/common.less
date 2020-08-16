@@ -1,0 +1,359 @@
+.mc-button {
+  font-size: 14px;
+  color: @gray-300;
+  
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    color: @hoverElement;
+
+    svg path {
+      fill: @hoverElement;
+    }
+  }
+
+  &:active {
+    color: @pressElement;
+
+    svg path {
+      fill: @pressElement;
+    }
+  }
+}
+
+// Пагинация
+
+.mc-pagination {
+  margin: 0 auto 48px;
+  .page-item {
+    margin: 2px 5px;
+  }
+
+  .page {
+    &.active {
+      .page-link {
+        color: #fff;
+        background-color: @orange-100;
+        border-color: @orange-100;
+      }
+    }
+
+    .page-link {
+      color: #222222;
+    }
+  }
+
+  .prev.page-item .page-link, .next.page-item .page-link {
+    opacity: 0.6;
+  }
+
+  .prev.page-item .page-link {
+    padding-left: 50px;
+  }
+
+  .next.page-item .page-link {
+    padding-right: 50px;
+  }
+
+  .prev.page-item .page-link:after {
+      content: url('/assets/media/prev.svg');
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 18px;
+      top: 13px;
+  }
+
+  .next.page-item .page-link:after {
+    content: url('/assets/media/next.svg');
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+}
+
+  .prev .page-link, .next .page-link {
+    color: #fff;
+    background-color: #F58E15;
+    border-color: #F58E15;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .page-link {
+    padding: 14px 24px;
+  }
+  
+}
+
+// Кнопки
+
+.mc-btn-orange {
+  display: inline-block;
+  height: 36px;
+  padding: 6px 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: @white;
+  background-color: @orange-100;
+  border: 1px solid @orange-100;
+  border-radius: unset;
+  cursor: pointer;
+
+  &:focus {
+    color: @white;
+    background-color: @orange-100;
+    border: 1px solid @orange-100;  
+  }
+
+  &:hover {
+    background-color: @orange-200;
+    border: 1px solid @orange-200;
+    color: @white;
+  }
+
+  &:active {
+    background-color: @orange-300;
+    border: 1px solid @orange-300;
+    color: @white;
+  }
+}
+
+
+.mc-btn-orange.outline {
+  color: @black;
+  background-color: @white;
+  border: 1px solid @orange-100;
+  cursor: pointer;
+
+  &:hover {
+    color: @white;
+    background-color: @orange-100;
+    border: 1px solid @orange-100;
+  }
+
+  &:active {
+    color: @white;
+    background-color: @orange-200;
+    border: 1px solid @orange-200;
+  }
+}
+
+.mc-btn-orange.disable {
+  color: @gray-300;
+  background-color: @mainBGColor;
+  border: 1px solid @mainBGColor;
+  cursor: default;
+}
+
+.mc-btn-white {
+  display: inline-block;
+  height: 40px;
+  padding: 8px 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: @black;
+  background-color: @white;
+  border: 1px solid @gray-200;
+  cursor: pointer;
+
+  &:hover:not(.disable) {
+    color: @black;
+    background-color: @mainBGColor;
+    border: 1px solid @mainBGColor;
+  }
+
+  &:active:not(.disable) {
+    color: @black;
+    background-color: @border-color;
+    border: 1px solid @border-color;
+  }
+}
+
+.mc-btn-white.strange {
+  border: 1px solid @white;
+}
+
+.mc-btn-white.disable {
+  color: @gray-300;
+  cursor: default;
+}
+
+.mc-btn-white.l,
+.mc-btn-orange.l {
+  height: 40px;
+  padding: 8px 24px;
+}
+
+.mc-btn-white.xl,
+.mc-btn-orange.xl {
+  height: 50px;
+  padding: 17px 36px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.mc-btn-radio {
+  display: inline-block;
+  height: 29px;
+  padding: 6px 12px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+  color: @black;
+  background-color: @mainBGColor;
+  border: 1px solid @mainBGColor;
+  cursor: pointer;
+
+  &:hover {
+    background-color: @border-color;
+    border: 1px solid @border-color;
+  }
+
+  &:active {
+    background-color: @gray-200;
+    border: 1px solid @gray-200;
+  }
+}
+
+.mc-btn-radio.active {
+  color: @white;
+  background-color: @orange-100;
+  border: 1px solid @orange-100;
+
+  &:hover {
+    background-color: @orange-200;
+    border: 1px solid @orange-200;
+  }
+
+  &:active {
+    background-color: @orange-300;
+    border: 1px solid @orange-300;
+  }
+}
+
+
+
+// Список категорий (Каскадер)
+
+.mc-cascader-dropdown {
+  .el-cascader-menu__wrap {
+    height: calc(100vh - 320px);
+  }
+  /* основные категории (пункты, где есть вложенность) */
+  .in-active-path,
+  .in-active-path:hover {
+    background-color: #F58E15 !important;
+  }
+  .in-active-path .el-cascader-node__label {
+    color: #fff !important;
+  }
+  /* подкатегории (пункты, где нет вложенности) */
+  .el-cascader-node:not(.is-disabled):focus, 
+  .el-cascader-node:not(.is-disabled):hover {
+    background-color: #F1F1F1;
+  }
+  .el-cascader-node:not(.is-disabled):focus .el-cascader-node__label,
+  .el-cascader-node:not(.is-disabled):hover .el-cascader-node__label {
+    color: #F58E15;
+  }  
+  /* стрелка вложенности */
+  .el-cascader-node__postfix {
+    color: #fff;
+    font-weight: 900;
+  }
+
+}
+
+
+// Формы на element-ui
+.mc-form {
+
+  // form-item
+  .el-form-item {
+    position: relative;
+    margin-top: 5px;
+  
+    .el-form-item__label {
+      position: absolute;
+      z-index: 1;
+      top: -7px;
+      left: 16px;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 2px 8px;
+      background-color: white;
+    }
+
+    .el-input__inner {
+      border-radius: unset;
+      border: 1px solid @border-color;
+      padding: 17px 24px 14px 24px;
+      font-size: 16px;
+      line-height: 19px;
+      height: 50px;
+    }
+
+    .el-input__inner:focus {
+      border-color: @orange-100;
+    }
+
+    .el-form-item__error {
+      color: @red-300;
+    }
+
+  }
+
+  // button
+  .el-button--primary.is-active, .el-button--primary:active{
+    background-color: @orange-300;
+    border: 1px solid @orange-300;
+  }
+
+  .el-button--primary:focus, .el-button--primary:hover {
+    background-color: @orange-200;
+    border: 1px solid @orange-200;
+  }
+  
+
+
+}
+
+/**
+* * Теги
+*/
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  &__item {
+    background-color: @mainBGColor;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 0 12px 12px 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--small {
+      padding: 2px 6px;
+      margin: 0 8px 8px 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
